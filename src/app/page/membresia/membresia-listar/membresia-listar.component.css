@@ -1,0 +1,137 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);
+
+html {
+  background: rgb(246, 248, 248);
+}
+
+body {
+  padding: 40px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;  
+}
+
+.container {
+  max-width: 800px;
+  margin: 50px auto 0;
+}
+
+h1 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: #0F1012;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #0F1012;
+  color: #f9f9f9;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+th,
+td {
+  padding: 20px;
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: 1px solid #292b2e;
+}
+
+th:first-child,
+td:first-child {
+  padding-left: 30px;
+}
+
+th:last-child,
+td:last-child {
+  padding-right: 30px;
+}
+
+tr:hover {
+  background-color: #292b2e;
+}
+
+th {
+  background-color: #292b2e;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+td {
+  font-size: 18px;
+}
+
+@media (max-width: 600px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    border: 1px solid #292b2e;
+  }
+
+  td {
+    border: none;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td:before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  td:nth-of-type(1):before {
+    content: "No.";
+  }
+
+  td:nth-of-type(2):before {
+    content: "Fecha de inicio";
+  }
+
+  td:nth-of-type(3):before {
+    content: "Fecha de fin";
+  }
+}
+button {
+    background-color: #fca311;
+    border: 2px solid #14213d;
+    border-radius: 25px;
+    color: #fff;
+    transition: transform 0.3s ease-in-out;
+    font-size: 1.7rem;
+  }
+  
+  button:hover {
+    background-color: #14213d;
+    transform: rotate(5deg);
+  }
+  
+  
+  
+  
+  
+  
+  
