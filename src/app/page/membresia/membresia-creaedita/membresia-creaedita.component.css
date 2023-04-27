@@ -1,0 +1,67 @@
+
+
+
+
+/* Estilos para el cuerpo de la página */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+}
+
+/* Estilos para el contenedor principal */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para el título */
+h1 {
+  font-size: 32px;
+  margin: 0;
+  padding: 20px 0;
+  color: #333;
+}
+
+/* Estilos para el formulario */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Estilos para los botones de texto */
+button {
+  background-color: #fca311;
+  border: 2px solid #14213d;
+  border-radius: 25px;
+  color: #fff;
+  transition: transform 0.3s ease-in-out;
+  font-size: 1.1rem;
+  padding: 10px;
+}
+
+button:hover {
+  background-color: #14213d;
+  transform: rotate(5deg);
+}
+
+.tablafecha {
+  position: relative;
+}
+
+.tablafecha table {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+}
+
+.tablafecha td {
+  padding: 5px;
+}
+

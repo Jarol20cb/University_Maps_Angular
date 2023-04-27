@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" style="text-align: center;">
+
+        <div style="text-align: center;">
+            <h1>REGISTRO DE MEMBRESIAS</h1>
+        </div>
+        
+        <form [formGroup]="form" (submit)="aceptar()">
+
+            <mat-form-field class="example-full-width">
+                
+                <input matInput placeholder="Id" formControlName = "id">
+               </mat-form-field>
+               <br> 
+  
+               <mat-form-field appearance="fill">
+            
+                <input matInput [matDatepicker]="picker" formControlName="FechaInicio" placeholder="dd/mm/yyyy">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+               </mat-form-field><br>
+               
+               <mat-form-field appearance="fill">
+        
+                <input matInput [matDatepicker]="picker2" formControlName="FechaFin" placeholder="dd/mm/yyyy">
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+              </mat-form-field>
+              
+                
+               <button mat-raised-button color="primary">Aceptar</button><br>
+               <button mat-raised-button color="warn" routerLink="/membresias">Cancelar</button>
+          </form>
+
+        </div>
+</body>
+</html>
