@@ -13,6 +13,19 @@ h1
 font-family: 'Nerko One', cursive;
 font-size: 40px;
 }
+.big-heading {
+  font-weight: bold; /* Peso de fuente en negrita */
+  text-align: center; /* Alineación de texto centrada */
+  letter-spacing: 0.01em; /* Espaciado entre letras */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4); /* Sombra de texto */
+  transition: transform 0.3s ease-out;
+  
+}
+.big-heading:hover {
+  transform: scale(1.50); /* Aumentar tamaño en 10% */
+  cursor: pointer; /* Cambiar cursor a pointer */
+}
+
 table {
 width: 100%;
 border-collapse: separate;
@@ -94,7 +107,7 @@ background-color: #e0e0e0;
 <body>
   <div class="container">
     <div style="text-align: center;">
-      <h1>Lista de Destinos</h1>
+      <h1 class="big-heading">Lista de Destinos</h1>
     </div>
     <div style="text-align: right;">
       <button mat-raised-button color="warn" routerLink="/destinos/destinocrear">Nuevo</button>
