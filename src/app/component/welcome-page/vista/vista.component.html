@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .welcome-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #F5F5F5;
+}
+
+.app-mockup {
+  margin-bottom: 32px;
+}
+
+.app-mockup img {
+  max-width: 100%;
+}
+
+.download-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.download-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #FFFFFF;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.ios {
+  background-color: #007AFF;
+}
+
+.android {
+  background-color: #5CB85C;
+}
+
+.download-button img {
+  width: 32px;
+  height: 32px;
+  margin-right: 16px;
+}
+
+</style>
+<body>
+    
+    <div class="welcome-container">
+        <div class="app-mockup">
+          <img src="mockup.png" alt="Mockup de la aplicación">
+        </div>
+        <div class="download-buttons">
+          <a href="#" class="download-button ios">
+            <img src="ios-icon.png" alt="Icono de descarga para iOS">
+            <span>Descargar en App Store</span>
+          </a>
+          <a href="#" class="download-button android">
+            <img src="android-icon.png" alt="Icono de descarga para Android">
+            <span>Descargar en Google Play</span>
+          </a>
+        </div>
+      </div>
+      
+</body>
+</html>

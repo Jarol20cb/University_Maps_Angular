@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  
+</head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&family=Pathway+Extreme:ital@1&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Nerko One', cursive;
+    font-size: 25px;
+}
+
+
+.header{
+
+    background-color: #1b3039;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 85px;
+    padding: 5px 10%;
+    position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.header .logo{
+    cursor: pointer;
+    margin-right: auto;
+}
+
+.header .logo img{
+    height: 70px;
+    width: auto;
+    transition: all 0.3s;
+}
+
+.header .logo img:hover{
+    transform: scale(1.2);
+}
+
+.header .nav-links{
+    list-style: none;
+}
+
+.header .nav-links li{
+    display: inline-block;
+    padding: 0 20px;    
+}
+
+.header .nav-links li:hover{
+    transform: scale(1.1);
+}
+
+.header .nav-links a{
+    font-size: 700;
+    color: #eceff1;
+    text-decoration: none;    
+}
+
+.header .nav-links li a:hover{
+    color: #00ff37;
+}
+
+.header .btn button{
+    margin-left: 20px;
+    font-weight: 700;
+    color: #1b3039;
+    padding: 9px 25px;
+    background: #eceff1;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.header .btn button:hover{
+    background-color: #e2f1f8;
+    color: #ffbc0e;
+    transform: scale(1.1);
+}
+
+.big-heading {
+  font-size: 2rem; /* Tamaño de fuente grande */
+  font-weight: bold; /* Peso de fuente en negrita */
+  text-align: center; /* Alineación de texto centrada */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  letter-spacing: 0.01em; /* Espaciado entre letras */
+  color: white; /* Color blanco */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4); /* Sombra de texto */
+  transition: transform 0.3s ease-out;
+  font-family: 'Nerko One', cursive;
+  -webkit-text-stroke: 0.005px rgb(145, 199, 154);
+}
+.big-heading:hover {
+  transform: scale(1.50); /* Aumentar tamaño en 10% */
+  cursor: pointer; /* Cambiar cursor a pointer */
+}
+a {
+  text-decoration: none; /* Quitar subrayado */
+}
+
+</style>
+<body>
+  <header class="header">
+    <div class="logo">
+        <a href="https://jarol20cb.github.io/University-Maps/" target="_blank">
+            <H1  class="big-heading">University Maps</H1>
+          </a>
+        
+        <!--
+<img src="logo/favicon.ico" alt="Logo">
+        --> 
+        
+  </div>
+  <ul class="nav-links">
+        <li><a routerLink="" routerLinkActive="active-link" class="nav-link">Inicio</a></li>
+        <li><a routerLink="sugerencias" routerLinkActive="active-link" class="nav-link">Sugerencias</a></li>
+        <li><a routerLink="membresias" routerLinkActive="active-link" class="nav-link">Tipo de membresía</a></li>
+        <li><a routerLink="destinos" routerLinkActive="active-link" class="nav-link">Destino</a></li>
+        <li><a routerLink="universidades" routerLinkActive="active-link" class="nav-link">Universidad</a></li>
+
+  </ul>
+    
+  </header>
+  
+</body>
+</html>
+
+<!--
+        
+-->
