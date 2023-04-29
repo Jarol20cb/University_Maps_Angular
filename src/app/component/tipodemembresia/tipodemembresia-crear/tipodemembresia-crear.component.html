@@ -68,19 +68,19 @@ button.warn {
       <br>
       <mat-form-field class="example-full-width">
         <mat-label>Descripcion</mat-label>
-        <input matInput placeholder="Descripcion" formControlName="descripcionTipoDeMembresia">
+        <input matInput placeholder="Descripcion" formControlName="descripcionTipoDeMembresia" required>
       </mat-form-field>
       <br>
       <mat-form-field appearance="fill">
         <mat-label>Fecha inicio</mat-label>
-        <input matInput [matDatepicker]="picker1" formControlName="fechainicioTipoDeMembresia" placeholder="Choose a date">
+        <input matInput [matDatepicker]="picker1" formControlName="fechainicioTipoDeMembresia" placeholder="Choose a date" required>
         <mat-datepicker-toggle [for]="picker1"></mat-datepicker-toggle>
         <mat-datepicker #picker1></mat-datepicker>
       </mat-form-field>
       <br>
       <mat-form-field appearance="fill">
         <mat-label>Fecha fin</mat-label>
-        <input matInput [matDatepicker]="picker2" formControlName="fechafinTipoDeMembresia" placeholder="Choose a date">
+        <input matInput [matDatepicker]="picker2" formControlName="fechafinTipoDeMembresia" placeholder="Choose a date" required>
         <mat-datepicker-toggle [for]="picker2"></mat-datepicker-toggle>
         <mat-datepicker #picker2></mat-datepicker>
       </mat-form-field>

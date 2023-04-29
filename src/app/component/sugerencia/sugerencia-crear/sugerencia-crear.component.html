@@ -60,12 +60,12 @@ button.warn {
     <form [formGroup]="form" (submit)="aceptar()">
       <mat-form-field class="example-full-width">
         <mat-label>Id</mat-label>
-        <input matInput placeholder="Id" formControlName="id">
+        <input matInput placeholder="Id" formControlName="id" required>
       </mat-form-field>
       <br>
       <mat-form-field class="example-full-width">
         <mat-label>Sugerencia</mat-label>
-        <input matInput placeholder="Descripcion" formControlName="descripcionSugerencia">
+        <input matInput placeholder="Descripcion" formControlName="descripcionSugerencia" required>
       </mat-form-field>
       <br>
       <div style="text-align: center;">

@@ -1,82 +1,108 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style>
-    .welcome-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #F5F5F5;
-}
+<!--
 
-.app-mockup {
-  margin-bottom: 32px;
-}
-
-.app-mockup img {
-  max-width: 100%;
-}
-
-.download-buttons {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.download-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 24px;
-  margin-bottom: 16px;
-  border-radius: 8px;
-  font-size: 20px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #FFFFFF;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
-}
-
-.ios {
-  background-color: #007AFF;
-}
-
-.android {
-  background-color: #5CB85C;
-}
-
-.download-button img {
-  width: 32px;
-  height: 32px;
-  margin-right: 16px;
-}
-
-</style>
-<body>
-    
-    <div class="welcome-container">
-        <div class="app-mockup">
-          <img src="mockup.png" alt="Mockup de la aplicación">
-        </div>
-        <div class="download-buttons">
-          <a href="#" class="download-button ios">
-            <img src="ios-icon.png" alt="Icono de descarga para iOS">
-            <span>Descargar en App Store</span>
-          </a>
-          <a href="#" class="download-button android">
-            <img src="android-icon.png" alt="Icono de descarga para Android">
-            <span>Descargar en Google Play</span>
-          </a>
-        </div>
-      </div>
+  <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bienvenido a nuestra aplicación de rutas universitarias</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-BW6zE7PwAxuvWsddh7cNg8RfKgRX1pZb/4oX43UoT+xTqjK49Dsy1CJQx+y8d0JYq3+KKZ1gd0ZQUp8R29Eftg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+    integrity="sha384-qn6p7v6D3qN14IV0wovjNqR/21PTJQ2c+7+h6TpYXPOrLd8nqWwWLl3stZISzR6H"
+    crossorigin="anonymous">
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
       
-</body>
+      .contenedor-principal {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      
+      .download-button {
+  display: inline-block;
+  padding: 12px 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.download-button.ios {
+  background-color: #4b4b4d;
+  border: 2px solid #4b4b4d;
+}
+
+.download-button.android {
+  background-color: #a4c639;
+  border: 2px solid #a4c639;
+}
+
+.download-button:hover {
+  transform: translateY(-3px);
+}
+
+.button-icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.button-icon i {
+  font-size: 24px;
+}
+
+.download-button.ios .button-icon {
+  color: #fff;
+}
+
+.download-button.android .button-icon {
+  color: #000;
+}
+
+      img {
+  width: 20%;
+  max-width: 200px; /* o cualquier otro valor que desees */
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="contenedor-principal">
+      <h1>Bienvenido a nuestra aplicación de rutas universitarias</h1>
+      <p>Descarga la app para iOS o Android para empezar a utilizarla:</p>
+      <img src="" alt="Mockup de la aplicación">
+      <div class="botones-descarga">
+        <div class="botones-descarga">
+            <a href="#" class="download-button ios">
+              <span class="button-icon"><i class="fab fa-apple"></i></span> Descargar para iOS
+            </a>
+            <a href="#" class="download-button android">
+              <span class="button-icon"><i class="fab fa-android"></i></span> Descargar para Android
+            </a>
+          </div>
+          
+    </div>
+    <script>
+        const botonIos = document.querySelector('.boton-ios');
+const botonAndroid = document.querySelector('.boton-android');
+
+botonIos.addEventListener('click', () => {
+  window.location.href = 'https://itunes.apple.com/es/app/nombre-de-tu-app/id1234567890?mt=8'; // Reemplaza la URL por la de tu aplicación en la App Store de Apple
+});
+
+botonAndroid.addEventListener('click', () => {
+  window.location.href = 'https://play.google.com/store/apps/details?id=com.tuapp.nombre'; // Reemplaza la URL por la de tu aplicación en la Google Play Store
+});
+
+    </script>
 </html>
+-->
