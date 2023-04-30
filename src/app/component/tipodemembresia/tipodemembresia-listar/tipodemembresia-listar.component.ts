@@ -1,9 +1,11 @@
 import { TipodemembresiaService } from './../../../service/tipodemembresia.service';
-import { Component, OnInit } from '@angular/core';
+import { Component,AfterViewInit, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { TipoDeMembresia } from 'src/app/model/TipoDeMembresia';
 import{MatDialog} from '@angular/material/dialog';
 import { TipodemembresiaDialogoComponent } from './tipodemembresia-dialogo/tipodemembresia-dialogo.component';
+
+import {MatPaginator} from '@angular/material/paginator';
 
 @Component({
   selector: 'app-tipodemembresia-listar',
@@ -19,6 +21,7 @@ export class TipodemembresiaListarComponent implements OnInit{
   ngOnInit(): void {
     this.mS.list().subscribe((data)=>{
       this.dataSource=new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
     });
 
     this.mS.getList().subscribe(data=>{
@@ -42,4 +45,12 @@ export class TipodemembresiaListarComponent implements OnInit{
   filter(e:any){
     this.dataSource.filter=e.target.value.trim();
   }
+
+  @ViewChild(MatPaginator) paginator: MatPaginator = {} as MatPaginator;
+
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+  }
+
+
 }

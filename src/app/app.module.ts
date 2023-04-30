@@ -35,6 +35,11 @@ import { TipodemembresiaDialogoComponent } from './component/tipodemembresia/tip
 import { UniversidadDialogoComponent } from './component/universidad/universidad-listar/universidad-dialogo/universidad-dialogo.component';
 import { WelcomePageComponent } from './component/welcome-page/welcome-page.component';
 import { VistaComponent } from './component/welcome-page/vista/vista.component';
+import { NgxPaginationModule } from 'ngx-pagination';  //esta libreria es para la paginacion ----> npm install ngx-pagination --save
+import {MatPaginatorModule} from '@angular/material/paginator';
+
+
+
 
 @NgModule({
   declarations: [
@@ -74,7 +79,9 @@ import { VistaComponent } from './component/welcome-page/vista/vista.component';
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    NgxPaginationModule, // Agregar aquí la librería para la paginacion
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

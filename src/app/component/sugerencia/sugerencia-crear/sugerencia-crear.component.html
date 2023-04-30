@@ -15,7 +15,7 @@
   border: 1px solid #ddd;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(to bottom right, #b2d8b2, #d4ebd4);
+  background: #c9c9c9;
   font-family: Arial, sans-serif;
 }
 
@@ -39,15 +39,6 @@ button {
   cursor: pointer;
 }
 
-button.primary {
-  background-color: #7f9cf5;
-  color: #fff;
-}
-
-button.warn {
-  background-color: #fa828e;
-  color: #fff;
-}
 </style>
 
 <body>
@@ -69,8 +60,11 @@ button.warn {
       </mat-form-field>
       <br>
       <div style="text-align: center;">
-        <button mat-raised-button color="primary">Aceptar</button>
-        <button mat-raised-button color="warn" routerLink="/sugerencias">Cancelar</button>
+        <button mat-raised-button color="primary" style="background-color: #1b3039; color: white;" onmouseover="this.style.backgroundColor='#c9c9c9'; this.style.color='#1b3039';" onmouseout="this.style.backgroundColor='#1b3039'; this.style.color='white';">Aceptar</button>
+
+        <button mat-raised-button color="warn" routerLink="/sugerencias" style="background-color: #1b3039; color: white;" onmouseover="this.style.backgroundColor='#c9c9c9'; this.style.color='#1b3039';" onmouseout="this.style.backgroundColor='#1b3039'; this.style.color='white';">Cancelar</button>
+
+
       </div>
     </form>
   </div>

@@ -71,7 +71,7 @@ transition: color 0.2s ease-in-out;
 }
 
 .mat-icon:hover {
-color: #2196f3;
+color: #c9c9c9;
 }
 
 a {
@@ -122,51 +122,67 @@ button:hover {
   box-shadow: 3px 3px 3px rgba(0,0,0,0.5); /* sombra más grande */
 }
 
+
+
 </style>
 <body>
-    <div class="container">
-      <div style="text-align: center;">
-        <h1 class="big-heading">Lista de Sugerencias</h1>
-      </div>
-      <div style="text-align: right;">
-        <button mat-raised-button color="warn" routerLink="/sugerencias/sugerenciacrear">Nuevo</button>
-      </div>
-      <div>
-        <input class="busquedaUwU" matInput (keyup)="filter($event)" placeholder="Buscar">
-        <br><br>
-      </div>
-      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-        <ng-container matColumnDef="id">
-          <th mat-header-cell *matHeaderCellDef>No.</th>
-          <td mat-cell *matCellDef="let element">{{element.id}}</td>
-        </ng-container>
-
-        <ng-container matColumnDef="descripcionSugerencia">
-          <th mat-header-cell *matHeaderCellDef>Descripcion</th>
-          <td mat-cell *matCellDef="let element">{{element.descripcionSugerencia}}</td>
-        </ng-container>
-
-        <ng-container matColumnDef="edicionS">
-          <th mat-header-cell *matHeaderCellDef>Editar</th>
-          <td mat-cell *matCellDef="let element">
-            <a>
-              <mat-icon [routerLink]="['edicionS',element.id]">edit</mat-icon>
-            </a>
-          </td>
-        </ng-container>
-
-        <ng-container matColumnDef="eliminarS">
-          <th mat-header-cell *matHeaderCellDef>Eliminar</th>
-          <td mat-cell *matCellDef="let element">
-            <a>
-              <mat-icon (click)="confirm(element.id)">delete</mat-icon>
-            </a>
-          </td>
-        </ng-container>
-
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-      </table>
+  <div class="container">
+    <div style="text-align: center;">
+      <h1 class="big-heading">Lista de Sugerencias</h1>
     </div>
+
+    <div style="text-align: right;">
+      <button mat-raised-button color="primary" routerLink="/sugerencias/sugerenciacrear"
+        style="background-color: #1b3039; color: #ffffff;"
+        onmouseover="this.style.backgroundColor='#c9c9c9'; this.style.color='#1b3039';"
+        onmouseout="this.style.backgroundColor='#1b3039'; this.style.color='#ffffff';">
+        Nuevo
+      </button>
+    </div>
+
+    <div>
+      <input class="busquedaUwU" matInput (keyup)="filter($event)" placeholder="Buscar">
+      <br><br>
+    </div>
+    <mat-paginator [pageSizeOptions]="[2, 5, 8, 10]"
+                 showFirstLastButtons
+                 aria-label="Select page of periodic elements">
+  </mat-paginator>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>No.</th>
+        <td mat-cell *matCellDef="let element">{{element.id}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="descripcionSugerencia">
+        <th mat-header-cell *matHeaderCellDef>Descripcion</th>
+        <td mat-cell *matCellDef="let element">{{element.descripcionSugerencia}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="edicionS">
+        <th mat-header-cell *matHeaderCellDef>Editar</th>
+        <td mat-cell *matCellDef="let element">
+          <a>
+            <mat-icon [routerLink]="['edicionS',element.id]">edit</mat-icon>
+          </a>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="eliminarS">
+        <th mat-header-cell *matHeaderCellDef>Eliminar</th>
+        <td mat-cell *matCellDef="let element">
+          <a>
+            <!--este es el icono de eliminar-->
+            <mat-icon (click)="confirm(element.id)">delete</mat-icon>
+          </a>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
 </body>
+
 </html>

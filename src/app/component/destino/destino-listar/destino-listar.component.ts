@@ -1,16 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,AfterViewInit, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Destino } from 'src/app/model/Destino';
 import { DestinoService } from 'src/app/service/destino.service';
 import{MatDialog} from '@angular/material/dialog';
 import { DestinoDialogoComponent } from './destino-dialogo/destino-dialogo.component';
+import {MatPaginator} from '@angular/material/paginator';
+
+
+
 
 @Component({
   selector: 'app-destino-listar',
   templateUrl: './destino-listar.component.html',
   styleUrls: ['./destino-listar.component.css']
 })
-export class DestinoListarComponent implements OnInit{
+export class DestinoListarComponent implements OnInit, AfterViewInit{
   lista:Destino[]=[];
   dataSource:MatTableDataSource<Destino>=new MatTableDataSource();
   displayedColumns:string[]=['id','aulaDestino','pabellonDestino','facultadDestino','edicionD','eliminarD'];
@@ -19,6 +23,7 @@ export class DestinoListarComponent implements OnInit{
   ngOnInit(): void {
     this.dS.list().subscribe((data)=>{
       this.dataSource=new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
     });
 
     this.dS.getList().subscribe(data=>{
@@ -42,4 +47,11 @@ export class DestinoListarComponent implements OnInit{
   filter(e:any){
     this.dataSource.filter=e.target.value.trim();
   }
+  @ViewChild(MatPaginator) paginator: MatPaginator = {} as MatPaginator;
+
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+  }
+
+
 }

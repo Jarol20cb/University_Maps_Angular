@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,AfterViewInit, OnInit, ViewChild } from '@angular/core';
 import { Sugerencia } from 'src/app/model/Sugerencia';
 import { MatTableDataSource } from '@angular/material/table';
 import { SugerenciaService } from 'src/app/service/sugerencia.service';
 import{MatDialog} from '@angular/material/dialog';
 import { SugerenciaDialogoComponent } from './sugerencia-dialogo/sugerencia-dialogo.component';
-
+import {MatPaginator} from '@angular/material/paginator';
 @Component({
   selector: 'app-sugerencia-listar',
   templateUrl: './sugerencia-listar.component.html',
@@ -19,6 +19,7 @@ export class SugerenciaListarComponent implements OnInit {
   ngOnInit(): void {
     this.sS.list().subscribe((data)=>{
       this.dataSource=new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
     });
 
     this.sS.getList().subscribe(data=>{
@@ -42,5 +43,10 @@ export class SugerenciaListarComponent implements OnInit {
   }
   filter(e:any){
     this.dataSource.filter=e.target.value.trim();
+  }
+  @ViewChild(MatPaginator) paginator: MatPaginator = {} as MatPaginator;
+
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
   }
 }
