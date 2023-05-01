@@ -10,34 +10,98 @@
   <style type="text/css">@font-face{font-family:'Material Icons';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/materialicons/v140/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2) format('woff2');}.material-icons{font-family:'Material Icons';font-weight:normal;font-style:normal;font-size:24px;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;-webkit-font-feature-settings:'liga';-webkit-font-smoothing:antialiased;}</style>
 <style>.mat-typography{font-size:14px;font-weight:400;line-height:20px;font-family:Roboto,sans-serif;letter-spacing:.0178571429em}html,body{height:100%}body{margin:0;font-family:Roboto,Helvetica Neue,sans-serif}</style><link rel="stylesheet" href="styles.e06a9809e0fa01f5.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.e06a9809e0fa01f5.css"></noscript><style>
   body {
-  background-image: linear-gradient(to bottom right, #f9f9f9, #ffffff);
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      
+      .contenedor-principal {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      
+      .download-button {
+  display: inline-block;
+  padding: 12px 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
 }
 
-body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        background-color: #f2f2f2;
-      }
-      h1 {
-        margin-top: 50px;
-        font-size: 3rem;
-        color: #333;
-      }
+.download-button.ios {
+  background-color: #4b4b4d;
+  border: 2px solid #4b4b4d;
+}
+
+.download-button.android {
+  background-color: #a4c639;
+  border: 2px solid #a4c639;
+}
+
+.download-button:hover {
+  transform: translateY(-3px);
+}
+
+.button-icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.button-icon i {
+  font-size: 24px;
+}
+
+.download-button.ios .button-icon {
+  color: #fff;
+}
+
+.download-button.android .button-icon {
+  color: #000;
+}
+
       img {
-        max-width: 100%;
-        height: auto;
-        margin-top: 50px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      }
-
-
-
+  width: 20%;
+  max-width: 200px; /* o cualquier otro valor que desees */
+}
 </style></head>
 
 <body class="mat-typography">
-        <h1>Bienvenido a mi sitio web</h1>
-    <img src="https://via.placeholder.com/800x400" alt="Imagen de ejemplo">
+        <div class="contenedor-principal">
+      <h1>Bienvenido a nuestra aplicación de rutas universitarias</h1>
+      <p>Descarga la app para iOS o Android para empezar a utilizarla:</p>
+      <img src="favicon.ico" alt="Mockup de la aplicación">
+      <div class="botones-descarga">
+        <div class="botones-descarga">
+            <a href="#" class="download-button ios">
+              <span class="button-icon"><i class="fab fa-apple"></i></span> Descargar para iOS
+            </a>
+            <a href="#" class="download-button android">
+              <span class="button-icon"><i class="fab fa-android"></i></span> Descargar para Android
+            </a>
+          </div>
+          
+    </div>
+    <script>
+        const botonIos = document.querySelector('.boton-ios');
+const botonAndroid = document.querySelector('.boton-android');
+
+botonIos.addEventListener('click', () => {
+  window.location.href = 'https://itunes.apple.com/es/app/nombre-de-tu-app/id1234567890?mt=8'; // Reemplaza la URL por la de tu aplicación en la App Store de Apple
+});
+
+botonAndroid.addEventListener('click', () => {
+  window.location.href = 'https://play.google.com/store/apps/details?id=com.tuapp.nombre'; // Reemplaza la URL por la de tu aplicación en la Google Play Store
+});
+
+    </script>
 
   <app-root></app-root>
 <script src="runtime.ff66635cf02bc622.js" type="module"></script><script src="polyfills.a2517e850b35002b.js" type="module"></script><script src="main.3761594713310022.js" type="module"></script>
