@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .container {
+  display: flex;
+}
+
+.content {
+  flex: 1;
+}
+
+.app-title {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.app-description {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.features-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.features-list {
+  margin-bottom: 30px;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.image-container {
+  flex: 1;
+}
+
+.app-image {
+  width: 100%;
+}
+
+.download-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.play-store-button,
+.app-store-button {
+  display: inline-block;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 18px;
+  margin: 0 10px;
+  transition: all 0.3s ease;
+}
+
+.play-store-button {
+  background-color: #4CAF50; /* Verde */
+}
+
+.app-store-button {
+  background-color: #000; /* Negro */
+}
+
+.play-store-button:hover,
+.app-store-button:hover {
+  opacity: 0.8;
+  transform: translateY(-3px);
+}
+
+
+@media screen and (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+
+    .content,
+    .image-container {
+      flex: 100%;
+      padding: 10px;
+    }
+  }
+</style>
+
+<body>
+  <div class="container">
+    <div class="content">
+
+      <br><br><br><br><br><br>
+      <h2 class="app-title">University Maps</h2>
+      <p class="app-description">Tú guía personal en el campus universitario.
+        Navega fácilmente, encuentra ubicaciones importantes y optimiza tu experiencia
+      <h4 class="features-title">Funcionalidades</h4>
+      <ul class="features-list">
+        <li> Accede a un mapa interactivo y detallado de tu campus
+          para encontrar rápidamente cualquier edificio o área importante.</li>
+        <li>Obtén indicaciones precisas paso a paso para llegar a tu destino
+          deseado sin perder tiempo ni esfuerzo.</li>
+        <li>Filtra y busca edificios por nombre o función para localizar fácilmente las instalaciones que necesitas.</li>
+      </ul>
+      <div class="download-buttons">
+        <a href="#" class="play-store-button">Play Store</a>
+        <a href="#" class="app-store-button">App Store</a>
+      </div>
+
+
+
+    </div>
+    <div class="image-container">
+      <img src="./assets/telefono.jpg" alt="Mockup de la Aplicación" class="app-image" />
+    </div>
+  </div>
+</body>
+</html>
