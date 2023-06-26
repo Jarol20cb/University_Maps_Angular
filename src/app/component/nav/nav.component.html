@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+
+
+</head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&family=Pathway+Extreme:ital@1&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Nerko One', cursive;
+    font-size: 25px;
+}
+
+
+.header{
+
+    background-color: #1b3039;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 85px;
+    padding: 5px 10%;
+    position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.header .logo{
+    cursor: pointer;
+    margin-right: auto;
+}
+
+.header .logo img{
+    height: 70px;
+    width: auto;
+    transition: all 0.3s;
+}
+
+.header .logo img:hover{
+    transform: scale(1.2);
+}
+
+
+.big-heading {
+  font-size: 2rem; /* Tamaño de fuente grande */
+  font-weight: bold; /* Peso de fuente en negrita */
+  text-align: center; /* Alineación de texto centrada */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  letter-spacing: 0.01em; /* Espaciado entre letras */
+  color: white; /* Color blanco */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4); /* Sombra de texto */
+  transition: transform 0.3s ease-out;
+  font-family: 'Nerko One', cursive; /*Tipo de letra*/
+  -webkit-text-stroke: #c9c9c9;
+}
+.big-heading:hover {
+  transform: scale(1.50); /* Aumentar tamaño en 10% */
+  cursor: pointer; /* Cambiar cursor a pointer */
+}
+
+
+@media screen and (max-width: 768px) {
+  .big-heading {
+    font-size: 1.5rem; /* Tamaño de fuente reducido para dispositivos móviles */
+  }
+}
+
+a {
+  text-decoration: none; /* Quitar subrayado */
+  color: #1b3039;
+}
+.select {
+  position: relative;
+  top: 15px;
+  right: 40px;
+}
+.Btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: .3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+  background-color: rgb(255, 65, 65);
+  font-family: Arial, sans-serif;
+  top: -5px;
+
+}
+
+/* plus sign */
+.sign {
+  width: 100%;
+  transition-duration: .3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+}
+
+.sign svg {
+  width: 17px;
+  font-family: Arial, sans-serif;
+}
+
+.sign svg path {
+  fill: white;
+  font-family: Arial, sans-serif;
+}
+/* text */
+.text {
+  position: absolute;
+  right: 0%;
+  width: 0%;
+  opacity: 0;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  transition-duration: .3s;
+  font-family: Arial, sans-serif;
+}
+/* hover effect on button width */
+.Btn:hover {
+  width: 125px;
+  border-radius: 40px;
+  transition-duration: .3s;
+  font-family: Arial, sans-serif;
+}
+
+.Btn:hover .sign {
+  width: 30%;
+  transition-duration: .3s;
+  padding-left: 20px;
+  font-family: Arial, sans-serif;
+
+}
+/* hover effect button's text */
+.Btn:hover .text {
+  opacity: 1;
+  width: 70%;
+  transition-duration: .3s;
+  padding-right: 10px;
+  font-family: Arial, sans-serif;
+}
+/* button click effect*/
+.Btn:active {
+  transform: translate(2px ,2px);
+  font-family: Arial, sans-serif;
+}
+
+.img-zoom {
+  transition: transform 0.3s ease;
+}
+
+.img-zoom:hover {
+  transform: scale(1.2);
+}
+
+
+
+
+
+</style>
+<body>
+  <header class="header">
+    <div class="logo">
+        <a href="https://jarol20cb.github.io/University-Maps/" target="_blank">
+            <H1  class="big-heading">University Maps</H1>
+          </a>
+  </div>
+<div
+style="
+  position: relative;
+  top: -5px;
+  right: 37px;
+"
+>
+<button (click)="toggleOptions()" style="background: none; border: none; cursor: pointer;">
+  <img src="./assets/perfil.png" class="img-zoom" alt="Icono desplegar opciones" style="width: 65px; height: 65px; border-radius: 50%; object-fit: cover; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+
+</button>
+
+<div style="position: absolute; top: 80px; right: -100px; border-radius: 50px;">
+  <div *ngIf="showOptions" style="position: relative; background-color: #f9f9f9; box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); padding: 8px; width: 250px; height: 200px; overflow-y: auto; border-radius: 4px; z-index: 99;" class="options">
+    <a  routerLink="/components/bienvenida" routerLinkActive="active-link">Inicio</a><br>
+    <a  routerLink="/components/destinos" routerLinkActive="active-link">Destino</a><br>
+    <a  routerLink="/components/pagos" routerLinkActive="active-link">Pago</a><br>
+    <a  routerLink="/components/profesores" routerLinkActive="active-link">Profesor</a><br>
+    <a  routerLink="/components/rutas" routerLinkActive="active-link">Ruta</a><br>
+    <a  routerLink="/components/sugerencias" routerLinkActive="active-link">Sugerencia</a><br>
+    <a  routerLink="/components/membresias" routerLinkActive="active-link">Tipo de membresia</a><br>
+    <a  routerLink="/components/ubicaciones" routerLinkActive="active-link">Ubicacion</a><br>
+    <a  routerLink="/components/ubicacionesfavoritas" routerLinkActive="active-link">Ubicacion favorita</a><br>
+    <a  routerLink="/components/universidades" routerLinkActive="active-link">Universidad</a><br>
+    <a  routerLink="/components/usuarios" routerLinkActive="active-link">Usuarios</a><br>
+    <a  [hidden]="role=='STAFF' || role=='USER'" routerLink="/components/reportes" routerLinkActive="active-link">Reportes</a><br>
+  </div>
+</div>
+
+
+
+
+
+</div>
+<div>
+  <div>
+    <button class="Btn"(click)="cerrarSesion()">
+
+      <div class="sign"><svg viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path></svg></div>
+
+      <div class="text">Logout</div>
+    </button>
+
+  </div>
+
+</div>
+
+
+
+  </header>
+
+
+</body>
+</html>

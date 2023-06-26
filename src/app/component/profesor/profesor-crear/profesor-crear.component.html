@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  /* Estilo para el contenedor principal */
+  .container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: #c9c9c9;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilo para el encabezado */
+.container h1 {
+  margin-top: 0;
+  font-size: 28px;
+  font-weight: bold;
+  color: #212529;
+}
+
+
+
+/* Estilo para los botones */
+button {
+  margin: 0 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+button.primary {
+  background-color: #7f9cf5;
+  color: #fff;
+}
+
+button.warn {
+  background-color: #fa828e;
+  color: #fff;
+}
+</style>
+
+<body>
+  <br><br><br><br><br>
+  <div class="container">
+    <div style="text-align: center;">
+      <h1>Registro de Profesores</h1>
+    </div>
+
+    <form [formGroup]="form" (submit)="aceptar()">
+      <mat-form-field class="example-full-width">
+        <mat-label>Id</mat-label>
+        <input matInput placeholder="Id" formControlName="id" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field class="example-full-width">
+        <mat-label>Nombre</mat-label>
+        <input matInput placeholder="Nombre" formControlName="nombreProfesor" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field class="example-full-width">
+        <mat-label>Apellido paterno</mat-label>
+        <input matInput placeholder="Apellido paterno" formControlName="apellidoPaternoProfesor" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field class="example-full-width">
+        <mat-label>Apellido materno</mat-label>
+        <input matInput placeholder="Apellido materno" formControlName="apellidoMaternoProfesor" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field class="example-full-width">
+        <mat-label>Calificacion</mat-label>
+        <input matInput placeholder="Calificacion" formControlName="calificacionProfesor" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field class="example-full-width">
+        <mat-label>Universidad</mat-label>
+        <mat-select formControlName="universidad" [(value)]="id" required>
+          <mat-option *ngFor="let u of listaU" [value]="u.idUniversidad">
+            {{u.nombreUniversidad}}
+        </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <div style="text-align: center;">
+
+        <button mat-raised-button color="primary" style="background-color: #1b3039; color: white;" onmouseover="this.style.backgroundColor='#c9c9c9'; this.style.color='#1b3039';" onmouseout="this.style.backgroundColor='#1b3039'; this.style.color='white';">Aceptar</button>
+
+        <button mat-raised-button color="warn" routerLink="/components/profesores" style="background-color: #1b3039; color: white;" onmouseover="this.style.backgroundColor='#c9c9c9'; this.style.color='#1b3039';" onmouseout="this.style.backgroundColor='#1b3039'; this.style.color='white';">Cancelar</button>
+
+
+      </div>
+    </form>
+  </div>
+</body>
+</html>
