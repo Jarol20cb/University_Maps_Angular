@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+
+  @import url('https://fonts.googleapis.com/css2?family=Nerko+One&family=Pathway+Extreme:ital@1&display=swap');
+h1
+{
+font-family: 'Nerko One', cursive;
+font-size: 40px;
+}
+.big-heading {
+  font-weight: bold; /* Peso de fuente en negrita */
+  text-align: center; /* Alineación de texto centrada */
+  letter-spacing: 0.01em; /* Espaciado entre letras */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4); /* Sombra de texto */
+  transition: transform 0.3s ease-out;
+
+}
+.big-heading:hover {
+  transform: scale(1.50); /* Aumentar tamaño en 10% */
+  cursor: pointer; /* Cambiar cursor a pointer */
+}
+
+table {
+width: 100%;
+border-collapse: separate;
+border-spacing: 0;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background-color:  #1b3039;
+border-radius: 10px;
+overflow: hidden;
+border: 1px solid  #1b3039;
+}
+
+th {
+background-color: #4f4f4f;
+color:  #ffffff;
+font-weight: bold;
+text-transform: uppercase;
+padding: 15px;
+text-align: left;
+}
+
+td {
+font-size: 14px;
+color: #ffffff;
+padding: 15px;
+text-align: left;
+border-bottom: 1px solid #ddd;
+}
+
+td:last-child {
+border-bottom: 1px solid #ddd;
+}
+
+.mat-elevation-z8 {
+box-shadow: none;
+}
+
+
+a {
+text-decoration: none;
+color: inherit;
+display: flex;
+align-items: center;
+}
+
+a:hover {
+color: #2196f3;
+}
+</style>
+<body>
+  <div class="container">
+    <div style=" text-align: center;">
+      <h1 class="big-heading">Nombre de usuarios y cantidad de sus ubicaciones favoritas</h1>
+    </div><br>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="nombreUsuario">
+        <th mat-header-cell *matHeaderCellDef> Usuario </th>
+        <td mat-cell *matCellDef="let element of contador"> {{element.nombreUsuario}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="contadorUsuario">
+        <th mat-header-cell *matHeaderCellDef> Cantidad de ubicaciones favoritas </th>
+        <td mat-cell *matCellDef="let element of contador"> {{element.contadorUbicacionesFavoritas}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+  </div>
+</body>
+</html>

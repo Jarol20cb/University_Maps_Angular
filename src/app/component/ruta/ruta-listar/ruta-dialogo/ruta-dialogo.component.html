@@ -1,0 +1,16 @@
+<mat-dialog-content>
+  <style>
+    .button-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 20px;
+}
+
+  </style>
+  <p>¿Está seguro de eliminar?</p>
+  <div class="button-container">
+    <button mat-raised-button color="primary" (click)="confirm(true)" style="background-color: #1b3039; color: white;" onmouseover="this.style.backgroundColor='#c9c9c9'; this.style.color='#1b3039';" onmouseout="this.style.backgroundColor='#1b3039'; this.style.color='white';">Sí</button>
+    <button mat-raised-button color="accent" (click)="confirm(false)" style="background-color: #1b3039; color: white;" onmouseover="this.style.backgroundColor='#c9c9c9'; this.style.color='#1b3039';" onmouseout="this.style.backgroundColor='#1b3039'; this.style.color='white';">No</button>
+  </div>
+</mat-dialog-content>
