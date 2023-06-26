@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login</title>
+</head>
+<body>
+  <div class="contenedor-login">
+    <div class="usuario-foto">
+      <img src="./assets/icono_maps.ico" alt="imagen de usuario">
+    </div>
+    <h1>Iniciar sesión</h1>
+    <div class="input-form">
+      <input class="input" name="text" type="text" required="" [(ngModel)]="username">
+      <label class="textUser">Usuario</label>
+    </div><br>
+
+    <div class="input-form">
+      <input class="input" name="text" type="password" required="" [(ngModel)]="password">
+      <label class="textUser">Contraseña</label>
+    </div><br>
+    <button (click)="login()">
+      Iniciar sesión
+      <div class="arrow-wrapper">
+          <div class="arrow"></div>
+      </div>
+    </button>
+    <div>
+      <a routerLink="/components/error" routerLinkActive="active-link">¿Olvidó su contraseña?</a><br>
+      <a routerLink="/components/nuevito" routerLinkActive="active-link">¿Aún no tienes una cuenta?</a>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Nerko+One&family=Pathway+Extreme:ital@1&display=swap');
+h1
+{
+font-family: 'Nerko One', cursive;
+font-size: 40px;
+}
+.big-heading {
+  font-weight: bold; /* Peso de fuente en negrita */
+  text-align: center; /* Alineación de texto centrada */
+  letter-spacing: 0.01em; /* Espaciado entre letras */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4); /* Sombra de texto */
+  transition: transform 0.3s ease-out;
+
+}
+.big-heading:hover {
+  transform: scale(1.50); /* Aumentar tamaño en 10% */
+  cursor: pointer; /* Cambiar cursor a pointer */
+}
+
+table {
+width: 100%;
+border-collapse: separate;
+border-spacing: 0;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background-color:  #1b3039;
+border-radius: 10px;
+overflow: hidden;
+border: 1px solid  #1b3039;
+}
+
+th {
+background-color: #4f4f4f;
+color:  #ffffff;
+font-weight: bold;
+text-transform: uppercase;
+padding: 15px;
+text-align: left;
+}
+
+td {
+font-size: 14px;
+color: #ffffff;
+padding: 15px;
+text-align: left;
+border-bottom: 1px solid #ddd;
+}
+
+td:last-child {
+border-bottom: none;
+}
+
+.mat-elevation-z8 {
+box-shadow: none;
+}
+
+.mat-icon {
+font-size: 20px;
+color: #ffffff;
+cursor: pointer;
+transition: color 0.2s ease-in-out;
+}
+
+.mat-icon:hover {
+color: #c9c9c9;
+}
+
+
+a {
+text-decoration: none;
+color: inherit;
+display: flex;
+align-items: center;
+}
+
+a:hover {
+color: #2196f3;
+}
+
+.busquedaUwU {
+display: block;
+width: 20%;
+height: 40px;
+padding: 10px;
+font-size: 16px;
+border:#1b3039;
+border-radius: 20px;
+background-color: #f5f5f5;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+transition: all 0.2s ease-in-out;
+
+}
+
+.busquedaUwU:focus {
+outline: none;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+background-color: #e0e0e0;
+}
+
+button {
+  background-color: #FFC0CB; /* color rojo pastel */
+  border-radius: 5px; /* bordes redondos */
+  border: none; /* sin borde */
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.3); /* sombra */
+  color: #fff; /* texto blanco */
+  cursor: pointer; /* cursor de dedo */
+  font-size: 16px; /* tamaño de fuente */
+  padding: 10px 20px; /* espacio interno */
+  transition: all 0.3s ease; /* transición suave */
+  z-index: 0;
+}
+
+button:hover {
+  background-color: #FFA07A; /* color rojo pastel más oscuro */
+  box-shadow: 3px 3px 3px rgba(0,0,0,0.5); /* sombra más grande */
+}
+
+
+</style>
+<body>
+  <div class="container">
+    <div style="text-align: center;">
+      <h1 class="big-heading">Lista de Profesores</h1>
+    </div>
+
+
+    <div style="text-align: right;">
+
+      <button mat-raised-button [hidden]="role=='USER'" color="primary" routerLink="/components/profesores/profesorcrear"
+    style="background-color: #1b3039; color: #ffffff;"
+    onmouseover="this.style.backgroundColor='#c9c9c9'; this.style.color='#1b3039';"
+    onmouseout="this.style.backgroundColor='#1b3039'; this.style.color='#ffffff';">
+    Nuevo
+    </button>
+    </div>
+
+
+    <div>
+      <input class="busquedaUwU" matInput (keyup)="filter($event)" placeholder="Buscar">
+      <br><br>
+    </div>
+
+    <mat-paginator [pageSizeOptions]="[2, 5, 10]"
+                 showFirstLastButtons
+                 aria-label="Select page of periodic elements">
+  </mat-paginator>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>No.</th>
+        <td mat-cell *matCellDef="let element">{{element.idProfesor}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="nombreProfesor">
+        <th mat-header-cell *matHeaderCellDef>Nombre</th>
+        <td mat-cell *matCellDef="let element">{{element.nombreProfesor}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="apellidoPaternoProfesor">
+        <th mat-header-cell *matHeaderCellDef>Apellido paterno</th>
+        <td mat-cell *matCellDef="let element">{{element.apellidoPaternoProfesor}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="apellidoMaternoProfesor">
+        <th mat-header-cell *matHeaderCellDef>Apellido materno</th>
+        <td mat-cell *matCellDef="let element">{{element.apellidoMaternoProfesor}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="calificacionProfesor">
+        <th mat-header-cell *matHeaderCellDef>Calificacion</th>
+        <td mat-cell *matCellDef="let element">{{element.calificacionProfesor}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="universidad">
+        <th mat-header-cell *matHeaderCellDef>Universidad</th>
+        <td mat-cell *matCellDef="let element">{{element.universidad.nombreUniversidad}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="edicionP">
+        <th mat-header-cell [hidden]="role=='STAFF' || role=='USER'" *matHeaderCellDef>Editar</th>
+        <td mat-cell [hidden]="role=='STAFF' || role=='USER'" *matCellDef="let element">
+          <a>
+            <mat-icon [routerLink]="['edicionP',element.idProfesor]">edit</mat-icon>
+          </a>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="eliminarP">
+        <th mat-header-cell [hidden]="role=='STAFF' || role=='USER'" *matHeaderCellDef>Eliminar</th>
+        <td mat-cell [hidden]="role=='STAFF' || role=='USER'" *matCellDef="let element">
+          <a>
+            <mat-icon (click)="confirm(element.idProfesor)">delete</mat-icon>
+          </a>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+</body>
+</html>
